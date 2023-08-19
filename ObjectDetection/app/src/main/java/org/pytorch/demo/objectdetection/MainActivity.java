@@ -47,7 +47,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Runnable {
     private int mImageIndex = 0;
-    private String[] mTestImages = {"ASL_person_A.png", "ASL_hand_A.jpg"};
+    private String[] mTestImages = {"ASL_person_A.png", "ASL_hand_A.jpg", "ASL_train_A.jpg"};
 
     private ImageView mImageView;
     private ResultView mResultView;
