@@ -86,7 +86,7 @@ public class ObjectDetectionActivity extends AbstractCameraXActivity<ObjectDetec
     protected AnalysisResult analyzeImage(ImageProxy image, int rotationDegrees) {
         try {
             if (mModule == null) {
-                mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "yolov5s.torchscript.ptl"));
+                mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "asl.torchscript"));
             }
         } catch (IOException e) {
             Log.e("Object Detection", "Error reading assets", e);
@@ -94,7 +94,6 @@ public class ObjectDetectionActivity extends AbstractCameraXActivity<ObjectDetec
         }
         Bitmap bitmap = imgToBitmap(image.getImage());
         Matrix matrix = new Matrix();
-        matrix.postRotate(90.0f);
         bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight, true);
 
